@@ -536,6 +536,7 @@ function runTests() {
     console.log("Статистика:", taskManager.getStats()); //вывод статы
     
     // Задание 6.4
+    
     console.log("=== Задание 6.4 ===")
     console.assert(validateDate("31.12.2099") === true, "Тест задания 6 провален (максимальная допустимая дата)");
     console.assert(validateDate("01.01.1900") === true, "Тест задания 6 провален (минимальная допустимая дата)");
