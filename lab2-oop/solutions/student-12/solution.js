@@ -513,7 +513,6 @@ function runTests() {
     console.assert(testVehicle.age === (new Date().getFullYear() - 2010), 'Тест возраста провален');
     
     console.log('Всего создано транспортных средств:', Vehicle.getTotalVehicles());
-    
     console.log('Все тесты пройдены! ✅');
 }
 
