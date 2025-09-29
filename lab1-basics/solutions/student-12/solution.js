@@ -31,7 +31,7 @@ function getReviewerNumber(number, lab) {
         return "Номер человека в группе от 1 до 23";
     }
     let res = (number + lab) % 23;
-    return res;
+    return res || 23;
 }
 
 function getVariant(number, variants) {
@@ -432,7 +432,7 @@ function runTests() {
     console.assert(getReviewerNumber(24, 1) === "Номер человека в группе от 1 до 23", "Тест задания 2.1 провален (24)");
     console.assert(getReviewerNumber(1, 1) === 2, "Тест задания 2.1 провален");
     console.assert(getReviewerNumber(12, 1) === 13, "Тест задания 2.1 провален");
-    console.assert(getReviewerNumber(23, 1) === 1, "Тест задания 2.1 провален");
+    console.assert(getReviewerNumber(22, 1) === 23, "Тест задания 2.1 провален");
 
     // Задание 2.2
     console.log("=== Задание 2.2 ===");
