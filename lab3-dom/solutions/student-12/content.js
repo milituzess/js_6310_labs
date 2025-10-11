@@ -2,7 +2,7 @@
 
 function cyberpunkStyles() {
     const style = document.createElement('style'); // создает новый HTML-элемент <style>. в этот элемент мы будем помещать наши CSS-стили
-    style.id = 'spring-styles'; // дает элементу уникальный идентификатор. чтобы потом можно было найти и удалить этот элемент
+    style.id = 'cyberpunk-styles'; // дает элементу уникальный идентификатор. чтобы потом можно было найти и удалить этот элемент
     // Записывает CSS-код внутрь элемента <style>
     style.textContent = ` 
         /* 1. цвет текста */
@@ -181,14 +181,14 @@ function cyberpunkStyles() {
 
 
 
-function removeSpringStyles() { // находит элемент стилей по ID и удаляет его. Чтобы вернуть сайту оригинальный вид
-    const style = document.getElementById('spring-styles');
+function removeCyberpunkStyles() { // находит элемент стилей по ID и удаляет его. Чтобы вернуть сайту оригинальный вид
+    const style = document.getElementById('cyberpunk-styles');
     if (style) style.remove();
 }
 
 function createToggleButton() { // cоздает новую кнопку. Пользователь будет нажимать на нее для включения/выключения стилей
     const button = document.createElement('button'); 
-    button.id = 'spring-toggle'; // дает кнопке уникальный ID
+    button.id = 'cyberpunk-toggle'; // дает кнопке уникальный ID
     button.innerHTML = 'Включить киберпанк'; // текст на кнопке
 
     Object.assign(button.style, { // применяет несколько CSS-стилей к кнопке сразу
@@ -210,17 +210,17 @@ function createToggleButton() { // cоздает новую кнопку. Пол
 
     // логика переключения
     button.onclick = function() {
-        const isEnabled = localStorage.getItem('springStyle') === 'true'; // проверяет в локальном хранилище, включены ли стили
+        const isEnabled = localStorage.getItem('cyberpunkStyle') === 'true'; // проверяет в локальном хранилище, включены ли стили
         // localStorage сохраняет настройки между перезагрузками страницы
 
         if (isEnabled) { // если стили включены - выключает
-            removeSpringStyles();
-            localStorage.setItem('springStyle', 'false'); // переключение
+            removeCyberpunkStyles();
+            localStorage.setItem('cyberpunkStyle', 'false'); // переключение
             button.innerHTML = 'Включить киберпанк'; // обновление текста кнопки
             button.style.background = '#00FBFF'; // обновление цвета кнопки
         } else { // если выключены - включает
             cyberpunkStyles();
-            localStorage.setItem('springStyle', 'true');
+            localStorage.setItem('cyberpunkStyle', 'true');
             button.innerHTML = 'Включить базу';
         }
     };
@@ -271,16 +271,16 @@ function demonstrateDOMUsage() {
 
 // Основная функция инициализации
 function init() {
-    console.log("🚀 Initializing KAI Spring Style extension"); // выводит сообщение о начале инициализации
+    console.log("🚀 Initializing KAI Cyberpunk Style extension"); // выводит сообщение о начале инициализации
 
     createToggleButton(); // создает кнопку  
     demonstrateDOMUsage(); // запускает демонстрационные функции
 
     // Применяем стили если они были включены
-    const isEnabled = localStorage.getItem('springStyle') === 'true'; // проверяет сохраненные настройки и применяет стили если нужно, чтобы при перезагрузке страницы стили оставались включенными
+    const isEnabled = localStorage.getItem('cyberpunkStyle') === 'true'; // проверяет сохраненные настройки и применяет стили если нужно, чтобы при перезагрузке страницы стили оставались включенными
     if (isEnabled) {
         cyberpunkStyles();
-        const btn = document.getElementById('spring-toggle');
+        const btn = document.getElementById('cyberpunk-toggle');
         btn.innerHTML = 'Включить базу';
     }
 

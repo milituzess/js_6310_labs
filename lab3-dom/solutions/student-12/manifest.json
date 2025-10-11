@@ -4,10 +4,10 @@
   "version": "1.0",
   "description": "Изменяет стиль сайта kai.ru на тему в стиле киберпанк",
   "permissions": ["storage"],
-  "host_permissions": ["https://kai.ru/*", "http://kai.ru/*"],
+  "host_permissions": ["https://kai.ru/*", "http://kai.ru/*", "https://abiturientu.kai.ru/", "https://abiturientu.kai.ru/kalendar-priema", "https://abiturientu.kai.ru/prohodnye-bally"],
   "content_scripts": [
     {
-      "matches": ["https://kai.ru/*", "http://kai.ru/*"],
+      "matches": ["https://kai.ru/*", "http://kai.ru/*",  "https://abiturientu.kai.ru/", "https://abiturientu.kai.ru/kalendar-priema", "https://abiturientu.kai.ru/prohodnye-bally"],
       "js": ["content.js"],
       "run_at": "document_end"
     }
