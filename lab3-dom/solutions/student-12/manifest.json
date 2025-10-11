@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3, 
+  "name": "KAI Cyberpunk Style",
+  "version": "1.0",
+  "description": "Изменяет стиль сайта kai.ru на тему в стиле киберпанк",
+  "permissions": ["storage"],
+  "host_permissions": ["https://kai.ru/*", "http://kai.ru/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://kai.ru/*", "http://kai.ru/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
